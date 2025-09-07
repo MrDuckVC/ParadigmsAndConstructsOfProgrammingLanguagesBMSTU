@@ -24,7 +24,7 @@ def main():
     init(autoreset=True)
 
     # Номер варианта
-    n = 5
+    n = 13
 
     print(Fore.CYAN + "=== Лабораторная работа №2 ===")
     print(Fore.CYAN + "=== Объектно-ориентированные возможности Python ===")
