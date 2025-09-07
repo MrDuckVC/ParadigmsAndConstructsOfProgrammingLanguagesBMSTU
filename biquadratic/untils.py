@@ -27,7 +27,7 @@ def create_biquadratic_equation_string(a: float, b: float, c: float) -> str:
     def get_sign(x: float) -> str:
         return "+" if x >= 0 else "-"
 
-    return f"{int_or_float(a)}x^4 {get_sign(b)} {abs(int_or_float(b))}x^2 {get_sign(b)} {abs(int_or_float(c))} = 0"
+    return f"{int_or_float(a)}x^4 {get_sign(b)} {abs(int_or_float(b))}x^2 {get_sign(c)} {abs(int_or_float(c))} = 0"
 
 
 def parse_args() -> argparse.Namespace:
