@@ -1,4 +1,3 @@
-# ParadigmsAndConstructsOfProgrammingLanguagesBMSTU
 # Лабораторная работа №3-4
 ## Функциональные возможности языка Python.
 
