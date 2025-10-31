@@ -47,14 +47,14 @@ https://github.com/ugapanyuk/courses_content/wiki/COURSE_PCPL_MAIN
     * [История языка Python и основные ссылки.](https://github.com/ugapanyuk/BKIT_2022/wiki/python_intro)
     * [Используемые средства разработки.](https://github.com/ugapanyuk/BKIT_2022/wiki/IDE)
     * [Базовые конструкции языка Python.](https://nbviewer.jupyter.org/github/ugapanyuk/BKIT_2022/blob/main/notebooks/lect_1/python_lect_1.ipynb)
-    * Виртуальные окружения. Модули, пакеты.    
+    * Виртуальные окружения. Модули, пакеты.
         * [Презентация.](https://github.com/ugapanyuk/BKIT_2022/blob/master/pdf/modules.pdf)
         * [Примеры кода.](https://github.com/ugapanyuk/BKIT_2022/tree/main/code/lect2_code)
     * [Документация по ООП.](https://docs.python.org/3/tutorial/classes.html)
     * [Расширенные возможности объектно-ориентированного программирования в Python.](https://nbviewer.jupyter.org/github/ugapanyuk/BKIT_2022/blob/main/notebooks/oop/oop_adv.ipynb)
     * [Встроенные типы данных в Python.](https://nbviewer.jupyter.org/github/ugapanyuk/BKIT_2022/blob/main/notebooks/types_collections/built_in_types.ipynb)
     * [Коллекции в Python.](https://nbviewer.jupyter.org/github/ugapanyuk/BKIT_2022/blob/main/notebooks/types_collections/collections.ipynb)
-  
+
 1. Функциональное программирование в Python:
     * [Функциональные возможности обработки коллекций.](https://nbviewer.jupyter.org/github/ugapanyuk/BKIT_2022/blob/main/notebooks/fp/fp_collections.ipynb)
     * [Параметры функций. Использование args, и kwargs.](https://nbviewer.jupyter.org/github/ugapanyuk/BKIT_2022/blob/main/notebooks/fp/args_kwargs.ipynb)
@@ -66,11 +66,11 @@ https://github.com/ugapanyuk/courses_content/wiki/COURSE_PCPL_MAIN
 
 1. [Введение в модульное тестирование и паттерны проектирования.](https://github.com/ugapanyuk/courses_content/blob/main/pres/pcpl/test_pattern.pdf).
 
-1. Коллекции и их обработка. Введение в функциональное программирование. 
+1. Коллекции и их обработка. Введение в функциональное программирование.
     * [Примеры использования технологии LINQ.](https://ugapanyuk.github.io/data/linq.zip)
     * Библиотеки LINQ для Python:
         * https://github.com/viralogic/py-enumerable
-        * https://github.com/Xython/Linq.py 
+        * https://github.com/Xython/Linq.py
 
 1. [Функциональное программирование на языке F#.](https://ugapanyuk.github.io/data/fp.pdf)
 
@@ -106,7 +106,7 @@ https://github.com/ugapanyuk/courses_content/wiki/COURSE_PCPL_MAIN
 #### По языку Python:
 1. Лабораторная работа. [Объектно-ориентированные возможности языка Python.](https://github.com/ugapanyuk/BKIT_2022/wiki/lab_python_oop) ( [Пример](https://github.com/ugapanyuk/BKIT_2022/tree/main/code/lab2_code) )
 1. Лабораторная работа. [Функциональные возможности языка Python.](https://github.com/ugapanyuk/BKIT_2022/wiki/lab_python_fp) - **В случае полного выполнения зачитывается за две лабораторные работы**
-1. Лабораторная работа. [Модульное тестирование в Python.](https://github.com/ugapanyuk/BKIT_2022/wiki/lab_python_test) 
+1. Лабораторная работа. [Модульное тестирование в Python.](https://github.com/ugapanyuk/BKIT_2022/wiki/lab_python_test)
 1. Лабораторная работа. [Шаблоны проектирования и модульное тестирование в Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_python_test) - **В случае полного выполнения зачитывается за две лабораторные работы**
 1. Лабораторная работа. [Разработка простого бота для Telegram с использованием языка Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_bot1)
 1. Лабораторная работа. [Разработка бота на основе конечного автомата для Telegram с использованием языка Python.](https://github.com/ugapanyuk/BKIT_2021/wiki/lab_bot2)
@@ -121,7 +121,5 @@ https://github.com/ugapanyuk/courses_content/wiki/COURSE_PCPL_MAIN
 * Другие варианты домашнего задания по согласованию с преподавателем.
 
 ## Рубежные контроли:
-1. [Задание для РК №1.](https://github.com/ugapanyuk/courses_current/blob/main/python/rk/pcpl/pcpl_rk_1.pdf) 
-1. [Задание для РК №2.](https://github.com/ugapanyuk/courses_current/blob/main/python/rk/pcpl/pcpl_rk_2.pdf) 
-
-
+1. [Задание для РК №1.](https://github.com/ugapanyuk/courses_current/blob/main/python/rk/pcpl/pcpl_rk_1.pdf)
+1. [Задание для РК №2.](https://github.com/ugapanyuk/courses_current/blob/main/python/rk/pcpl/pcpl_rk_2.pdf)
