@@ -139,9 +139,9 @@ def main():
     # Вывести список улиц с количеством домов в каждой, отсортированный по количеству домов.
     res_2_unsorted: list[tuple[str, int]] = []
     for s in streets:
-        s_houses: list[tuple[str, int, str]] = list(
-            filter(lambda item: item[2] == s.name, one_to_many)
-        )
+        s_houses: list[tuple[str, int, str]] = [
+            item for item in one_to_many if item[2] == s.name
+        ]
 
         if len(s_houses) > 0:
             s_count: int = len(s_houses)
