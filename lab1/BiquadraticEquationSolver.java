@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class BiquadraticEquationSolver {
 
@@ -61,6 +60,8 @@ public class BiquadraticEquationSolver {
             } catch (InputMismatchException e) {
                 System.out.println("Некорректный ввод. Попробуйте снова.");
                 scanner.next(); // очистить буфер
+            } finally {
+                scanner.close();
             }
         }
     }
