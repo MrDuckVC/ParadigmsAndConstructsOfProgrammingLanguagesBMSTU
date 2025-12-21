@@ -3,9 +3,12 @@ import java.util.*;
 public class BiquadraticEquationSolver {
 
     private static final String INFINITY_ROOTS_TEXT = "Бесконечное множество решений";
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("=== Процедурный вариант решения биквадратного уравнения ===");
+
+        scanner.useLocale(Locale.US);
 
         double a, b, c;
 
@@ -52,7 +55,6 @@ public class BiquadraticEquationSolver {
      * Получение коэффициента с клавиатуры
      */
     public static double getCoefficient(String prompt) {
-        Scanner scanner = new Scanner(System.in);
         while (true) {
             try {
                 System.out.print(prompt);
@@ -60,8 +62,6 @@ public class BiquadraticEquationSolver {
             } catch (InputMismatchException e) {
                 System.out.println("Некорректный ввод. Попробуйте снова.");
                 scanner.next(); // очистить буфер
-            } finally {
-                scanner.close();
             }
         }
     }
