@@ -1,0 +1,77 @@
+<ContentDialog
+    x:Class="BackupSync.UI.Views.Dialogs.CreateJobDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:BackupSync.Core.Models"
+    mc:Ignorable="d"
+    Title="Новое задание синхронизации"
+    PrimaryButtonText="Создать"
+    CloseButtonText="Отмена"
+    DefaultButton="Primary">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="20" MinWidth="450">
+
+            <TextBlock Text="Основные настройки" Style="{ThemeResource SubtitleTextBlockStyle}"/>
+
+            <TextBox x:Name="JobNameTextBox" 
+                     Header="Название задания"
+                     PlaceholderText="Например: Бэкап фото с телефона"/>
+
+            <ComboBox x:Name="JobTypeComboBox" 
+                      Header="Тип синхронизации"
+                      HorizontalAlignment="Stretch"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="Резервное копирование (One-Way: PC -&gt; USB)" Tag="OneWay"/>
+                <ComboBoxItem Content="Синхронизация (Two-Way: PC &lt;-&gt; USB)" Tag="TwoWay"/>
+            </ComboBox>
+
+            <TextBlock Text="Пути" Style="{ThemeResource SubtitleTextBlockStyle}" Margin="0,12,0,0"/>
+
+            <TextBox x:Name="SourcePathTextBox" 
+                     Header="Папка на компьютере (Источник)"
+                     PlaceholderText="C:\Users\Name\Documents\Projects"/>
+
+            <ComboBox x:Name="DeviceComboBox" 
+                      Header="Целевое устройство (USB)"
+                      PlaceholderText="Выберите из сохраненных..."
+                      HorizontalAlignment="Stretch">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:Device">
+                        <TextBlock Text="{Binding UserGivenName}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBox x:Name="DestPathTextBox" 
+                     Header="Папка на устройстве (Назначение)"
+                     PlaceholderText="Например: \Backups\MyProjects"
+                     Description="Относительный путь от корня флешки (без буквы диска)"/>
+
+            <TextBlock Text="Политики разрешения конфликтов" Style="{ThemeResource SubtitleTextBlockStyle}" Margin="0,12,0,0"/>
+
+            <ComboBox x:Name="OrphanPolicyComboBox" 
+                      Header="Если файл есть только на USB (Сирота)"
+                      HorizontalAlignment="Stretch"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="Не трогать (Оставить файл)" Tag="KeepOnRemote"/>
+                <ComboBoxItem Content="Спрашивать пользователя" Tag="Ask"/>
+                <ComboBoxItem Content="Удалить с USB (Зеркало)" Tag="AutoDeleteOnRemote"/>
+                <ComboBoxItem Content="Копировать на ПК (Восстановление)" Tag="AutoCopyToLocal"/>
+            </ComboBox>
+
+            <ComboBox x:Name="ConflictPolicyComboBox" 
+                      Header="Если файл изменен с обеих сторон (Конфликт)"
+                      HorizontalAlignment="Stretch"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="Спрашивать пользователя" Tag="Ask"/>
+                <ComboBoxItem Content="Оставлять версию с ПК" Tag="KeepLocal"/>
+                <ComboBoxItem Content="Оставлять версию с USB" Tag="KeepRemote"/>
+                <ComboBoxItem Content="Оставлять самую новую (по дате)" Tag="KeepNewest"/>
+            </ComboBox>
+
+        </StackPanel>
+    </ScrollViewer>
+</ContentDialog>

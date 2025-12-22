@@ -1,0 +1,76 @@
+<ContentDialog
+    x:Class="BackupSync.UI.Views.Dialogs.ConflictResolutionDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:BackupSync.Core.Models"
+    mc:Ignorable="d"
+    Title="Разрешение конфликтов"
+    PrimaryButtonText="Применить решения"
+    CloseButtonText="Отмена"
+    DefaultButton="Primary"
+    FullSizeDesired="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Text="Следующие файлы требуют вашего внимания. Выберите действие для каждого из них:"
+                   TextWrapping="Wrap" 
+                   Margin="0,0,0,16"/>
+
+        <Grid Grid.Row="1" Padding="12,0,24,8" Opacity="0.6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="220"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Файл / Статус" Style="{ThemeResource CaptionTextBlockStyle}"/>
+            <TextBlock Grid.Column="1" Text="Действие" Style="{ThemeResource CaptionTextBlockStyle}"/>
+        </Grid>
+
+        <ListView Grid.Row="2" x:Name="ConflictsListView" SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:SyncAction">
+                    <Grid HorizontalAlignment="Stretch" Padding="0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,16,0">
+                            <TextBlock Text="{Binding Diff.RelativePath}" 
+                                       FontWeight="SemiBold" 
+                                       TextTrimming="CharacterEllipsis" 
+                                       ToolTipService.ToolTip="{Binding Diff.RelativePath}"/>
+
+                            <StackPanel Orientation="Horizontal" Spacing="4" Opacity="0.7">
+                                <TextBlock Text="Причина:"/>
+                                <TextBlock Text="{Binding Diff.Status}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <ComboBox Grid.Column="1" 
+                                  x:Name="ResolutionComboBox"
+                                  Tag="{Binding}"
+                                  HorizontalAlignment="Stretch"
+                                  SelectedIndex="0"
+                                  SelectionChanged="ResolutionComboBox_SelectionChanged">
+
+                            <ComboBoxItem Content="Пропустить" Tag="Skip"/>
+                            <ComboBoxItem Content="Перезаписать USB (Keep Local)" Tag="CopyFromSourceToDest"/>
+                            <ComboBoxItem Content="Перезаписать ПК (Keep Remote)" Tag="CopyFromDestToSource"/>
+
+                        </ComboBox>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</ContentDialog>
