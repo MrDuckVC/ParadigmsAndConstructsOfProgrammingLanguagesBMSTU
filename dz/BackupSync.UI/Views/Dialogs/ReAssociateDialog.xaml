@@ -1,0 +1,40 @@
+<ContentDialog
+    x:Class="BackupSync.UI.Views.Dialogs.ReAssociateDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:BackupSync.Core.Models"
+    mc:Ignorable="d" 
+    Title="Перепривязка устройства"
+    PrimaryButtonText="Сохранить связь"
+    CloseButtonText="Отмена"
+    DefaultButton="Primary">
+
+    <StackPanel Spacing="16" MinWidth="400">
+
+        <TextBlock x:Name="InfoTextBlock" 
+                   TextWrapping="Wrap"
+                   Style="{ThemeResource BodyTextBlockStyle}"/>
+
+        <ComboBox x:Name="DisksComboBox" 
+                  Header="Выберите новый физический диск"
+                  PlaceholderText="Список неопознанных дисков..."
+                  HorizontalAlignment="Stretch">
+
+            <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="models:DeviceStatus">
+                    <TextBlock>
+                        <Run Text="{Binding DisplayName}" FontWeight="SemiBold"/>
+                        <Run Text=" ("/>
+                        <Run Text="{Binding Letter}"/>
+                        <Run Text=", S/N: "/>
+                        <Run Text="{Binding VolumeSerialNumber}"/>
+                        <Run Text=")"/>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+    </StackPanel>
+</ContentDialog>

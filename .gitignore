@@ -222,3 +222,78 @@ __marimo__/
 
 # Java
 *.class
+
+
+
+# ================================
+# DZ .gitignore
+## === ОСНОВНОЙ .GITIGNORE (Visual Studio + .NET) ===
+
+# Пользовательские файлы Visual Studio
+\dz\*.rsuser
+\dz\*.suo
+\dz\*.user
+\dz\*.userosscache
+\dz\*.sln.docstates
+\dz\*.env
+\dz\.vs/
+
+# Результаты сборки (компиляция)
+\dz\[Dd]ebug/
+\dz\[Rr]elease/
+\dz\bin/
+\dz\obj/
+\dz\publish/
+\dz\Generated\ Files/
+
+# Артефакты .NET и NuGet
+\dz\project.lock.json
+\dz\project.assets.json
+\dz\*.nuget.props
+\dz\*.nuget.targets
+\dz\*.nupkg
+\dz\*.snupkg
+\dz\packages/
+\dz\!**/packages/build/
+
+# Файлы базы данных SQLite (НЕ пушим локальную БД с твоими тестами)
+\dz\*.db
+\dz\*.db-shm
+\dz\*.db-wal
+# НО сохраняем файлы миграций, они нужны для структуры
+\dz\!**/Migrations/*.cs
+
+# Кэши инструментов (Copilot, IntelliCode и др.)
+\dz\.vs/**/CopilotIndices/
+\dz\.vs/**/FileContentIndex/
+
+# Специфика WinUI 3 и Windows Store
+\dz\AppPackages/
+\dz\BundleArtifacts/
+\dz\Package.StoreAssociation.xml
+\dz\_pkginfo.txt
+\dz\*.appx
+\dz\*.appxbundle
+\dz\*.appxupload
+\dz\*.xbf
+\dz\*.pri
+
+# Логи и временные файлы
+\dz\*.log
+\dz\*.binlog
+\dz\[Ll]ogs/
+\dz\TestResult.xml
+\dz\*.coverage
+
+# Файлы VS Code (если используешь его параллельно)
+\dz\.vscode/*
+\dz\!.vscode/settings.json
+\dz\!.vscode/tasks.json
+\dz\!.vscode/launch.json
+\dz\!.vscode/extensions.json
+
+# Временные файлы системы
+\dz\~$*
+\dz\*~
+\dz\Thumbs.db
+# ================================

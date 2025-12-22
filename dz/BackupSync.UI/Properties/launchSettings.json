@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BackupSync.UI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BackupSync.UI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
